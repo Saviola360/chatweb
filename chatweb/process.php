@@ -1,12 +1,12 @@
 <?php
 include 'database.php';
 
-if (isset($_POST{'submit'})) {
+if (isset($_POST['submit'])) {
    $user = mysqli_real_escape_string($mysqli, $_POST['user']);
-   $user = mysqli_real_escape_string($mysqli, $_POST['message']);
+   $message = mysqli_real_escape_string($mysqli, $_POST['message']);
 
     date_default_timezone_set('Africa/Lagos');
-    $time = date('h:j:s a', time());
+    $time = date('h:i:s a', time());
 
      if (!isset($user) || $user == '' || !isset($message) || $message == '' ) {
         $error = "Please fill in your name and a message";
